@@ -30,17 +30,17 @@ function solve(input) {
     }
     return fights;
   }
-  for (let i = 1; i < input * input; i++) {
+  
+  for (let i = 1; i < input * 2; i++) {
     if (countFights(i, 0) === input) {
       result.push(i);
     }
   }
 
-  if (result[0] === 0) {
-    result[0] = -1;
-  }
-  if (result.length > 1) {
-    result = result.join(' \n ');
+  if (result.length >= 1) {
+    result = result.join('\n');
+  } else if (result.length === 0) {
+    result = -1;
   }
 
   return result;
